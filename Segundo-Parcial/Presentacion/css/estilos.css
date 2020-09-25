@@ -1,0 +1,233 @@
+* {
+    margin: 0;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif ;
+    font-size: 1.8rem;
+    width: 100%;
+    background-color:#8f2302;
+    background-image: linear-gradient(45deg, #f83600 0%, #f9d423 100%);
+}
+
+.contenedor{
+    margin: 0 2rem;
+}
+
+/* Header */
+
+#sitio-header {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    background-color: white;
+    border: 2px solid #f83600;
+    border-radius: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 .6rem .5rem  rgba(0, 0, 0, 0.5) ;
+}
+
+#logotipo {
+    flex: 1;
+}
+
+#logotipo img {
+    width: 100%;
+}
+
+#titulo {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#titulo h1 {
+    font-size: 7rem;
+    font-weight: 900;
+    color: #F34D14;
+    -webkit-text-stroke: .1rem #FFD600;
+}
+
+#titulo p {
+    font-size: 3rem;
+    font-weight: 500;
+}
+
+#usuario {
+    flex: 1;
+    text-align: center;
+}
+
+#usuario img {
+    width: 40%;
+    border-radius: 100%;
+    border: .3rem solid #F34D14 ;
+    box-shadow: 0 .3rem .5rem 0 rgba(0, 0, 0, 0.8) ;
+}
+
+#usuario p {
+    font-weight: 700;
+    color:black;
+    
+}
+
+/* Barra de Navegacción */
+
+#navegacion-principal {
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem 0 2rem 0;
+    background-color: rgba(255, 214, 0, 0.7);
+    border-radius: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 .6rem .5rem  rgba(0, 0, 0, 0.5) ;
+}
+
+#navegacion-principal a {
+    font-weight: 700;
+    font-size: 2rem;
+    background-color: #d64413;
+    padding: 2rem 7rem;
+    border-radius: 2rem;
+    border: .2rem solid white;
+    text-decoration: none;
+    color: white;
+    transition: background-color .4s ease-in-out;
+    transition: background-color .4s ease-in-out;
+}
+
+#navegacion-principal a:hover{
+    background-color: white;
+    color: #d64413;
+    border-color: #d64413;
+}
+
+/* Contenido Principal */
+
+#main {
+    display: flex;
+    justify-content: space-between;
+}
+
+aside {
+    flex:0 0 20%;
+}
+
+aside img {
+    width: 100%;
+}
+
+/* Formulario */
+
+
+#formulario {
+    flex: 0 0 calc(80% - 2rem);
+    padding: 2rem 10rem;
+    background-color: rgba(255, 255, 255, 0.55);
+    border-radius: 2rem;
+    box-shadow: 0 .6rem .5rem  rgba(0, 0, 0, 0.5) ;
+    transition: font-weight .1s ease;
+    transition: background-color .3s ease-in-out;
+}
+
+#formulario:hover {
+    font-weight: 650;
+    background-color: rgba(255, 255, 255, 0.60);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+legend {
+    text-align: center;
+    font-size: 3rem;
+}
+
+label {
+    margin-bottom: 1rem;
+}
+
+input, select{
+    height: 4rem;
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    border: none;
+    padding: 0 2rem;
+}
+
+input:focus {
+    outline: none;
+}
+
+#selects {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#sexo ,#frecuente {
+    width: 30%;
+}
+
+#boton-enviar{
+    float: right;
+    padding: 0 3rem;
+    transition: background-color .4s ease-in-out;
+    transition: color .4s ease-in-out;
+}
+
+#boton-enviar:hover {
+    background-color: #F84303;
+    color: white;
+    cursor: pointer;
+}
+
+/* Footer */
+
+footer {
+    background-color:rgba(255, 214, 0, 0.8);
+    display: flex;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+    align-items: center;
+    font-weight: 600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
