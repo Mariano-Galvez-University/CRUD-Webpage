@@ -1,0 +1,6 @@
+C:\Users\Furla\Documents\GitHub\Segundo-Parcial\Segundo-Parcial\Segundo-Parcial\Entidades\bin\Debug\Entidades.dll
+C:\Users\Furla\Documents\GitHub\Segundo-Parcial\Segundo-Parcial\Segundo-Parcial\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Furla\Documents\GitHub\Segundo-Parcial\Segundo-Parcial\Segundo-Parcial\Entidades\obj\Debug\Entidades.csprojAssemblyReference.cache
+C:\Users\Furla\Documents\GitHub\Segundo-Parcial\Segundo-Parcial\Segundo-Parcial\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\Furla\Documents\GitHub\Segundo-Parcial\Segundo-Parcial\Segundo-Parcial\Entidades\obj\Debug\Entidades.dll
+C:\Users\Furla\Documents\GitHub\Segundo-Parcial\Segundo-Parcial\Segundo-Parcial\Entidades\obj\Debug\Entidades.pdb

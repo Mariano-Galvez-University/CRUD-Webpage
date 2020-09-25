@@ -17,5 +17,7 @@ namespace Entidades
         public string TxtEmail { get; set; }
         public char TxtSexo { get; set; }
         public int EsClienteFrecuente { get; set; }
+        public string FechaIngreso { get; set; }
+        public int IntEstado { get; set; }
     }
 }
