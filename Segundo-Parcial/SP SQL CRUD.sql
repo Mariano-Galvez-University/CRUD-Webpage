@@ -183,6 +183,7 @@ CREATE PROC dbo.SPObtenerClientes
 AS
 BEGIN
 	SELECT	a.IdCliente,
+			a.TxtNit,
 			CONCAT(a.TxtNombres,' ',a.TxtApellidos) AS TxtNombres,
 			a.TxtDireccion,
 			a.TxtTelefono,
@@ -211,8 +212,9 @@ CREATE PROC dbo.SPObtenerDatosCliente(
 
 AS
 BEGIN
-	SELECT	a.IdCliente,
-			CONCAT(a.TxtNombres,' ',a.TxtApellidos) AS TxtNombres,
+	SELECT	a.TxtNit,
+			a.TxtNombres,
+			a.TxtApellidos,
 			a.TxtDireccion,
 			a.TxtTelefono,
 			a.TxtEmail,
