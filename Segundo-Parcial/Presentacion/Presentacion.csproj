@@ -67,9 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="css\estilos.css" />
+    <Content Include="FormularioClientes.aspx" />
+    <Content Include="img\Banner.jpg" />
+    <Content Include="img\Logo Pupuseria Excelente.png" />
+    <Content Include="img\Usuario.jpeg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormularioClientes.aspx.cs">
+      <DependentUpon>FormularioClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FormularioClientes.aspx.designer.cs">
+      <DependentUpon>FormularioClientes.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -80,6 +92,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{e2883490-85ae-4d2a-a30c-3268383ed675}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Entidades\Entidades.csproj">
+      <Project>{1370d923-2338-4fe7-8405-35f789e8c9a8}</Project>
+      <Name>Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
