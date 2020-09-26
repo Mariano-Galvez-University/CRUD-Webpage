@@ -110,11 +110,10 @@
                         <p ID="MensajeError" class="alert-heading text-center" runat="server">Operacion fallida!</p>
                     </asp:Panel>
 
-
                     <asp:Repeater ID="RepeaterClientes" runat="server">
                         <HeaderTemplate>
-                            <table class="table table-responsive-md">
-                                <thead class="thead-dark">
+                            <table class="table table-responsive-md table-striped table-borderless">
+                                <thead class="thead-light">
                                     <tr>
                                         <th class="text-center" scope="col">Nit</th>
                                         <th class="text-center" scope="col">Nombres</th>
@@ -134,11 +133,12 @@
                                 <td class="text-center"><%# Eval("TxtNombres")%></td>
                                 <td class="text-center"><%# Eval("TxtDireccion")%></td>
                                 <td class="text-center"><%# Eval("TxtTelefono")%></td>
-                                <td class="text-center"><%# Eval("TxtEmail")%></td>
+                                <td class="text-center"><%# Eval("TxtEmail") %></td>
                                 <td class="text-center"><%# Eval("TxtSexo")%></td>
                                 <td class="text-center"><%# Eval("EsClienteFrecuente")%></td>
                                 <td class="text-center"><asp:LinkButton ID="btnEditar" ClientIDMode="AutoID" Text="Editar" runat="server" CssClass="badge badge-primary" CommandArgument='<%# Eval("IdCliente") %>' OnCommand="btnEditar_Command"/></td>
                                 <td class="text-center"><asp:LinkButton ID="btnEliminar" ClientIDMode="AutoID" Text="Eliminar" runat="server" CssClass="badge badge-danger" CommandArgument='<%# Eval("IdCliente") %>' OnCommand="btnEliminar_Command"/></td>
+                                
                             </tr>
                         </ItemTemplate>
                         <FooterTemplate>
@@ -146,9 +146,11 @@
                             </table>
                         </FooterTemplate>
                     </asp:Repeater>
+                   
 
                     
-                </form>    
+                </form>   
+                
             </section>
         </section>
     </section>

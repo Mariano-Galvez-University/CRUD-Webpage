@@ -17,67 +17,9 @@ namespace Presentacion
             ObtenerClientes();
         }
 
-        private void ObtenerClientes()
-        {
-            DataTable DT = new DataTable();
-            DT = DatosClientes.ObtenerClientes();
-
-            RepeaterClientes.DataSource = DT;
-            RepeaterClientes.DataBind();
-
-            DT.Dispose();
-        }
-
-        protected void LimpiarFormulario()
-        {
-            TxtNit.Text = "";
-            TxtNombres.Text = "";
-            TxtApellidos.Text = "";
-            TxtDireccion.Text = "";
-            TxtTelefono.Text = "";
-            TxtEmail.Text = "";
-            SelectSexo.ClearSelection();
-            SelectFrecuente.ClearSelection();
-            Session["IdCliente"] = 0;
-        }
-
         protected void btnCancelar_Click(object sender, EventArgs e)
         {
             LimpiarFormulario();
-        }
-
-        private void AgregarCliente()
-        {
-            EntidadClientes Entidad = new EntidadClientes();
-
-            Entidad.TxtNit = TxtNit.Text;
-            Entidad.TxtNombres = TxtNombres.Text;
-            Entidad.TxtApellidos = TxtApellidos.Text;
-            Entidad.TxtDireccion = TxtDireccion.Text;
-            Entidad.TxtTelefono = TxtTelefono.Text;
-            Entidad.TxtEmail = TxtEmail.Text;
-            Entidad.TxtSexo =  Convert.ToChar(SelectSexo.SelectedItem.Value);
-            Entidad.EsClienteFrecuente = Convert.ToInt32(SelectFrecuente.SelectedItem.Value);
-
-            DataTable DT = new DataTable();
-
-            DT = DatosClientes.AgregarCliente(Entidad);
-
-            int Resultado = Convert.ToInt32(DT.Rows[0][0].ToString());
-
-
-            if (Resultado > 0)
-            {
-                AlertaExito.CssClass = AlertaExito.CssClass.Replace("d-none", " ");
-                MensajeExito.InnerText = "El cliente se ha agregado exitosamente!";
-                LimpiarFormulario();
-                ObtenerClientes();
-            }
-            else
-            {
-                AlertaError.CssClass = AlertaError.CssClass.Replace("d-none", " ");
-                MensajeError.InnerText = "Error al agregar cliente.";
-            }
         }
 
         protected void btnGuardar_Click(object sender, EventArgs e)
@@ -94,41 +36,6 @@ namespace Presentacion
             }
 
 
-        }
-
-        private void ActualizarCliente()
-        {
-            EntidadClientes Entidad = new EntidadClientes();
-
-            Entidad.IdCliente = Convert.ToInt32(Session["IdCliente"]);
-            Entidad.TxtNit = TxtNit.Text;
-            Entidad.TxtNombres = TxtNombres.Text;
-            Entidad.TxtApellidos = TxtApellidos.Text;
-            Entidad.TxtDireccion = TxtDireccion.Text;
-            Entidad.TxtTelefono = TxtTelefono.Text;
-            Entidad.TxtEmail = TxtEmail.Text;
-            Entidad.TxtSexo = Convert.ToChar(SelectSexo.SelectedItem.Value);
-            Entidad.EsClienteFrecuente = Convert.ToInt32(SelectFrecuente.SelectedItem.Value);
-
-            DataTable DT = new DataTable();
-
-            DT = DatosClientes.ActualizarCliente(Entidad);
-
-            int Resultado = Convert.ToInt32(DT.Rows[0][0].ToString());
-
-
-            if (Resultado > 0)
-            {
-                AlertaExito.CssClass = AlertaExito.CssClass.Replace("d-none", " ");
-                MensajeExito.InnerText = "El cliente se ha modificado exitosamente.";
-                LimpiarFormulario();
-                ObtenerClientes();
-            }
-            else
-            {
-                AlertaError.CssClass = AlertaError.CssClass.Replace("d-none", " ");
-                MensajeError.InnerText = "Error al modificar el cliente.";
-            }
         }
 
         protected void btnEditar_Command(object sender, System.Web.UI.WebControls.CommandEventArgs e)
@@ -180,6 +87,100 @@ namespace Presentacion
             {
                 AlertaError.CssClass = AlertaError.CssClass.Replace("d-none", " ");
                 MensajeError.InnerText = "Error al eliminar cliente.";
+            }
+        }
+
+        private void ObtenerClientes()
+        {
+            DataTable DT = new DataTable();
+            DT = DatosClientes.ObtenerClientes();
+
+            RepeaterClientes.DataSource = DT;
+            RepeaterClientes.DataBind();
+
+            DT.Dispose();
+        }
+
+        protected void LimpiarFormulario()
+        {
+            TxtNit.Text = "";
+            TxtNombres.Text = "";
+            TxtApellidos.Text = "";
+            TxtDireccion.Text = "";
+            TxtTelefono.Text = "";
+            TxtEmail.Text = "";
+            SelectSexo.ClearSelection();
+            SelectFrecuente.ClearSelection();
+            Session["IdCliente"] = 0;
+        }
+
+        private void AgregarCliente()
+        {
+            EntidadClientes Entidad = new EntidadClientes();
+
+            Entidad.TxtNit = TxtNit.Text;
+            Entidad.TxtNombres = TxtNombres.Text;
+            Entidad.TxtApellidos = TxtApellidos.Text;
+            Entidad.TxtDireccion = TxtDireccion.Text;
+            Entidad.TxtTelefono = TxtTelefono.Text;
+            Entidad.TxtEmail = TxtEmail.Text;
+            Entidad.TxtSexo = Convert.ToChar(SelectSexo.SelectedItem.Value);
+            Entidad.EsClienteFrecuente = Convert.ToInt32(SelectFrecuente.SelectedItem.Value);
+
+            DataTable DT = new DataTable();
+
+            DT = DatosClientes.AgregarCliente(Entidad);
+
+            int Resultado = Convert.ToInt32(DT.Rows[0][0].ToString());
+
+
+            if (Resultado > 0)
+            {
+                AlertaExito.CssClass = AlertaExito.CssClass.Replace("d-none", " ");
+                MensajeExito.InnerText = "El cliente se ha agregado exitosamente!";
+                LimpiarFormulario();
+                ObtenerClientes();
+
+            }
+            else
+            {
+                AlertaError.CssClass = AlertaError.CssClass.Replace("d-none", " ");
+                MensajeError.InnerText = "Error al agregar cliente.";
+            }
+        }
+
+        private void ActualizarCliente()
+        {
+            EntidadClientes Entidad = new EntidadClientes();
+
+            Entidad.IdCliente = Convert.ToInt32(Session["IdCliente"]);
+            Entidad.TxtNit = TxtNit.Text;
+            Entidad.TxtNombres = TxtNombres.Text;
+            Entidad.TxtApellidos = TxtApellidos.Text;
+            Entidad.TxtDireccion = TxtDireccion.Text;
+            Entidad.TxtTelefono = TxtTelefono.Text;
+            Entidad.TxtEmail = TxtEmail.Text;
+            Entidad.TxtSexo = Convert.ToChar(SelectSexo.SelectedItem.Value);
+            Entidad.EsClienteFrecuente = Convert.ToInt32(SelectFrecuente.SelectedItem.Value);
+
+            DataTable DT = new DataTable();
+
+            DT = DatosClientes.ActualizarCliente(Entidad);
+
+            int Resultado = Convert.ToInt32(DT.Rows[0][0].ToString());
+
+
+            if (Resultado > 0)
+            {
+                AlertaExito.CssClass = AlertaExito.CssClass.Replace("d-none", " ");
+                MensajeExito.InnerText = "El cliente se ha modificado exitosamente.";
+                LimpiarFormulario();
+                ObtenerClientes();
+            }
+            else
+            {
+                AlertaError.CssClass = AlertaError.CssClass.Replace("d-none", " ");
+                MensajeError.InnerText = "Error al modificar el cliente.";
             }
         }
     }
