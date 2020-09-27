@@ -73,7 +73,7 @@
 
                         <label for="sexo">Sexo:</label>
                         <asp:DropDownList ID="SelectSexo" runat="server" Width="40%">
-                             <asp:ListItem Selected="True">--Seleccionar--</asp:ListItem>
+                             <asp:ListItem disabled="disabled" Selected="True">--Seleccionar--</asp:ListItem>
                              <asp:ListItem Value="M">Masculino</asp:ListItem>
                              <asp:ListItem Value="F">Femenino</asp:ListItem>
                         </asp:DropDownList>                       
@@ -81,7 +81,7 @@
             
                         <label for="frecuente">Cliente Frecuente:</label>
                         <asp:DropDownList ID="SelectFrecuente" runat="server" Width="40%">
-                             <asp:ListItem Selected="True">--Seleccionar--</asp:ListItem>
+                             <asp:ListItem disabled="disabled" Selected="True">--Seleccionar--</asp:ListItem>
                              <asp:ListItem Value="1">Sí</asp:ListItem>
                              <asp:ListItem Value="0">No</asp:ListItem>
                         </asp:DropDownList> 
